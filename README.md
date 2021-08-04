@@ -1,4 +1,4 @@
-####简答题
+#### 简答题
 
 1、描述引用计数的工作原理，和优缺点？
 
@@ -54,8 +54,8 @@
 >       - 直到标记操作完成之后，最后执行垃圾回收
 --------------------------
 
-####代码题1
-#####基于以下代码完成下面的四个练习
+#### 代码题1
+##### 基于以下代码完成下面的四个练习
 
     const fp = require('lodash/fp')
 
@@ -70,7 +70,7 @@
         {name: "Pagani Huayra", horsepower: 700, dollar_value: 1300000, in_stock: false},
     ]
  
-######练习1：使用函数组合fp.flowRight()重新实现下面这个函数
+###### 练习1：使用函数组合fp.flowRight()重新实现下面这个函数
 
     let isLastInStock = function(cars){
         //获取最后一条数据
@@ -84,14 +84,14 @@
     console.log(f(cars))
     //false
 
-######练习2：使用fp.flowRight()、fp.prop()和fp.first()获取第一个car的name
+###### 练习2：使用fp.flowRight()、fp.prop()和fp.first()获取第一个car的name
  
 >答：
     let f = fp.flowRight(fp.prop('name'), fp.first)
     console.log(f(cars))
     //Ferrari FF
 
-######练习3：使用帮助函数_average重构averageDollarValue,使用函数组合的方式实现
+###### 练习3：使用帮助函数_average重构averageDollarValue,使用函数组合的方式实现
 
     let _average = function(xs){
         return fp.reduce(fp.add, 0, xs) / xs.length
@@ -111,7 +111,7 @@
     //790700
 
 
-######练习4：使用flowRight写一个sanitizeNames()函数，返回一个下划线连接的小写字符串，把数组中name转换为这种形式：例如：sanitizeNames(["Hello World"]) => ["hello_world"]
+###### 练习4：使用flowRight写一个sanitizeNames()函数，返回一个下划线连接的小写字符串，把数组中name转换为这种形式：例如：sanitizeNames(["Hello World"]) => ["hello_world"]
 
     let _underscore = fp.replace(/\W+/g, '_')   // 《-- 无需改动，并在 sanitizeNames中使用它
 
@@ -126,9 +126,9 @@
     // 'pagani_huayra' ]
 
 
-####代码题2
+#### 代码题2
 
-#####基于下面提供的代码，完成后续的四个练习
+##### 基于下面提供的代码，完成后续的四个练习
 
     // support.js
     class Container {
@@ -168,7 +168,7 @@
         Container
     }
 
-######练习1：使用fp.add(x,y)和fp.map(f,x)创建一个能让function里的值增加的函数exl
+###### 练习1：使用fp.add(x,y)和fp.map(f,x)创建一个能让function里的值增加的函数exl
 
     const fp = require('lodash/fp')
     const {Maybe, Container} = require('./support')
@@ -181,7 +181,7 @@
     console.log(ex1)
     //Maybe { _value: [ 6, 7, 2 ] }
 
-######练习2：实现一个函数ex2，能够使用fp.first获得列表的第一个元素
+###### 练习2：实现一个函数ex2，能够使用fp.first获得列表的第一个元素
 
     const fp = require('lodash/fp')
     const {Maybe, Container} = require('./support')
@@ -194,7 +194,7 @@
     console.log(ex2(fp.first));
     //do
 
-######练习3：实现一个函数ex3, 使用safeProp 和 fp.first找到user的名字的首字母
+###### 练习3：实现一个函数ex3, 使用safeProp 和 fp.first找到user的名字的首字母
 
     const fp = require('lodash/fp')
     const {Maybe, Container} = require('./support')
@@ -210,7 +210,7 @@
     console.log(ex3()); 
     // A
 
-######练习4：使用Maybe重写ex4，不要有if语句
+###### 练习4：使用Maybe重写ex4，不要有if语句
 
     const fp = require('lodash/fp')
     const {Maybe, Container} = require('./support')

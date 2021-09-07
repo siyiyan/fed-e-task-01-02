@@ -116,6 +116,7 @@
     let _underscore = fp.replace(/\W+/g, '_')   // 《-- 无需改动，并在 sanitizeNames中使用它
 
 >答：
+```
     let sanitizeNames = fp.flowRight(fp.map(fp.flowRight(_underscore, fp.toLower, fp.prop('name'))))
     console.log(sanitizeNames(cars))
     //[ 'ferrari_ff',
@@ -124,7 +125,7 @@
     // 'audi_r8',
     // 'aston_martin_one_77',
     // 'pagani_huayra' ]
-
+```
 
 #### 代码题2
 
